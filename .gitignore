@@ -1,0 +1,90 @@
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.example
+.env.backup
+.env.production
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+auth.json
+npm-debug.log
+yarn-error.log
+/.fleet
+/.idea
+/.vscode
+
+# Laravel Specific
+/vendor
+/node_modules
+/public/storage
+/storage/*.key
+.env
+.env.*.php
+
+# Laravel Caches
+bootstrap/cache/*
+!bootstrap/cache/.gitignore
+
+# Laravel Logs
+storage/logs/*
+!storage/logs/.gitignore
+
+# Laravel Storage (except .gitignore)
+storage/app/*
+!storage/app/.gitignore
+storage/framework/cache/data/*
+!storage/framework/cache/data/.gitignore
+storage/framework/sessions/*
+!storage/framework/sessions/.gitignore
+storage/framework/testing/*
+!storage/framework/testing/.gitignore
+storage/framework/views/*
+!storage/framework/views/.gitignore
+
+# IDE/Editor Configs
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Composer
+composer.lock
+
+# NPM/Yarn
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# PHPUnit
+.phpunit.result.cache
+
+# Ignore Homestead files if not used
+Homestead.yaml
+Homestead.json
+
+# Ignore Docker files if not used
+docker-compose.override.yml
+
+# Optional: Ignore local databases
+*.sqlite
+
+# Ignore coverage reports
+coverage/
+
+# Ignore build folders (if you build frontend)
+public/css
+public/js
+public/mix-manifest.json
+
+# Ignore Laravel Telescope data (if installed)
+storage/telescope
