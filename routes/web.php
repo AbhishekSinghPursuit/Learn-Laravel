@@ -54,6 +54,7 @@ use App\Http\Controllers\DemoController;
 use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\RegistrationController;
+use App\Models\Customer;
 
 // route for calling index function of DemoController class on / url
 Route::get('/', [DemoController::class, 'index']); // one way for calling specific function
@@ -68,3 +69,13 @@ Route::resource('/photo', PhotoController::class);
 // Registration controller
 Route::get('/register', [RegistrationController::class, 'index']);
 Route::post('/register', [RegistrationController::class, 'register']);
+
+// customer model route (ORM)
+// Route::get('/customer', function(){
+//     $customers = Customer::all();
+//     echo "<pre>";
+//     print_r($customers);
+// });
+
+// Create customer form and add customer data using form
+
