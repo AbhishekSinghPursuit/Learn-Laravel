@@ -34,17 +34,17 @@
         </div>
     </nav>
       <div class="container mt-4">
-        <h1 class="text-center text-warning">Customer Information</h1>
-        <form method="POST" action="{{url('/')}}/customer" class="container mt-4">
+        <h1 class="text-center text-warning">{{$title}}</h1>
+        <form method="POST" action="{{$url}}" class="container mt-4">
             @csrf
             <div class="row mb-3">
                 <div class="col-md-6">
                 <label for="name" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="name" name="name" maxlength="60" required>
+                <input type="text" value="{{$customer->name}}" class="form-control" id="name" name="name" maxlength="60" required>
                 </div>
                 <div class="col-md-6">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" maxlength="100" required>
+                <input type="email" value="{{$customer->email}}" class="form-control" id="email" name="email" maxlength="100" required>
                 </div>
             </div>
 
@@ -53,30 +53,30 @@
                     <label class="form-label">Gender</label>
                     <select class="form-select" name="gender" required>
                         <option value="">Select Gender</option>
-                        <option value="M">Male</option>
-                        <option value="F">Female</option>
-                        <option value="O">Other</option>
+                        <option value="M" {{$customer->gender == "M" ? "selected" : ""}}>Male</option>
+                        <option value="F" {{$customer->gender == "F" ? "selected" : ""}}>Female</option>
+                        <option value="O" {{$customer->gender == "O" ? "selected" : ""}}>Other</option>
                     </select>
                 </div>
                 <div class="col-md-6">
                 <label for="dob" class="form-label">Date of Birth</label>
-                <input type="date" class="form-control" id="dob" name="dob" required>
+                <input type="date" value="{{$customer->dob}}" class="form-control" id="dob" name="dob" required>
                 </div>
             </div>
 
             <div class="mb-3">
                 <label for="address" class="form-label">Address</label>
-                <textarea class="form-control" id="address" name="address" rows="2" required></textarea>
+                <textarea class="form-control" id="address" name="address" rows="2" required>{{$customer->address}}</textarea>
             </div>
 
             <div class="row mb-3">
                 <div class="col-md-6">
                 <label for="state" class="form-label">State</label>
-                <input type="text" class="form-control" id="state" name="state" required>
+                <input type="text" value="{{$customer->state}}" class="form-control" id="state" name="state" required>
                 </div>
                 <div class="col-md-6">
                 <label for="country" class="form-label">Country</label>
-                <input type="text" class="form-control" id="country" name="country" required>
+                <input type="text" value="{{$customer->country}}" class="form-control" id="country" name="country" required>
                 </div>
             </div>
 
@@ -87,11 +87,11 @@
                 </div>
                 <div class="col-md-3">
                 <label for="age" class="form-label">Age</label>
-                <input type="number" class="form-control" id="age" name="age" min="0" required>
+                <input type="number" value="{{$customer->age}}" class="form-control" id="age" name="age" min="0" required>
                 </div>
                 <div class="col-md-3 d-flex align-items-end">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="status" name="status" checked>
+                    <input class="form-check-input" type="checkbox" id="status" name="status" {{$customer->status =="1" ? "checked" : ""}}>
                     <label class="form-check-label" for="status">Active</label>
                 </div>
                 </div>

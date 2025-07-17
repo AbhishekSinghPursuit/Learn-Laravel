@@ -82,11 +82,11 @@
                         @endif
                     </td>
                     <td>
-                        <!-- <a href="{{url('/customer/update/')}}"> -->
+                        <a href="{{route('customer.edit', ['id' => $customer->customer_id])}}">
                             <button class="btn btn-primary" title="Update Customer">
                                 <i class="bi bi-pencil"></i>
                             </button>
-                        <!-- </a> -->
+                        </a>
                         <a href="{{url('/customer/destroy/')}}/{{$customer->customer_id}}">
                             <button class="btn btn-danger" title="Delete Customer">
                                 <i class="bi bi-trash"></i>

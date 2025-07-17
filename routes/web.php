@@ -83,3 +83,5 @@ Route::get('/customer', [CustomerController::class, 'index'])->name('customer.cr
 Route::post('/customer', [CustomerController::class, 'store']);
 Route::get('/customer/view', [CustomerController::class, 'view']);
 Route::get('/customer/destroy/{id}', [CustomerController::class, 'destroy'])->name('customer.destroy');
+Route::get('/customer/edit/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
+Route::post('/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
