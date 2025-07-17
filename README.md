@@ -31,6 +31,8 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 ## What I have learned today?
 
+> 16 July, 2025
+
 ### Routing without Controllers
 ```php
 File: /routes/web.php
@@ -187,6 +189,57 @@ Route::get('/courses', SingleActionController::class);
 
 // Resource controller provde some predefine function like index, edit, show, store, destroy
 Route::resource('/photo', PhotoController::class);
+```
+
+> 17 July, 2025
+```bash
+1. Form submission using post method with CSRF validation
+
+2. client side form validation (name, email and password), password confirmation
+
+3. Render form using re-usable Components - 
+php artisan make:component Input
+
+4. Created database named "pursuit" in phpMyAdmin
+
+5. Configured caches (env files) - it will clear the configurations and re-configure it
+php artisan config:Cache
+
+6. Made pre-built migrations
+php artisan migrate
+
+7. Create a separate table using make:migration command (create table with name "customers")
+php artisan make:migration create_customers_table
+
+8. Now you can add attributes in customers table class in new migration file
+
+9. After adding or completing the customers table, we need to migrate the table into the database
+php artisan migrate
+
+10. We made any mistake during the customer table creation, then we can rollback the previous migration
+php artisan mirgate:rollback
+
+11. Also if you want to delete all the tables and want to re-create them then we can refresh the migration
+php artisan migrate:refresh
+
+12. If you want to add a column in existing table then you can create a new migration file
+php artisan make:migration add_columns_to_customers_table
+
+13. Now you add the columns details in the newly created file in Migration
+
+14. After this migrate the changes to the database
+php artisan migrate
+
+15. We can model files to Make model for our table (creates file /app/Models/Customer.php)
+php artisan make:model <ModelName>
+
+16. Fetched data from database using ORM
+
+17. If you want to create migratoin and model of the table using one command(creates model and migration file)
+php artisan make:model Product --migration
+
+
+18. Customer data is being stored in the database using model and ORM, also fetched customer data and displayed using model and ORM.
 ```
 
 <!-- ## Laravel Sponsors
