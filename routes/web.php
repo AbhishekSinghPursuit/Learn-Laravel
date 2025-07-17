@@ -82,3 +82,4 @@ Route::post('/register', [RegistrationController::class, 'register']);
 Route::get('/customer', [CustomerController::class, 'index'])->name('customer.create'); // named routing
 Route::post('/customer', [CustomerController::class, 'store']);
 Route::get('/customer/view', [CustomerController::class, 'view']);
+Route::get('/customer/destroy/{id}', [CustomerController::class, 'destroy'])->name('customer.destroy');

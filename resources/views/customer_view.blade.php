@@ -82,12 +82,16 @@
                         @endif
                     </td>
                     <td>
-                        <button class="btn btn-primary" title="Update Customer">
-                            <i class="bi bi-pencil"></i>
-                        </button>
-                        <button class="btn btn-danger" title="Delete Customer">
-                            <i class="bi bi-trash"></i>
-                        </button>
+                        <!-- <a href="{{url('/customer/update/')}}"> -->
+                            <button class="btn btn-primary" title="Update Customer">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                        <!-- </a> -->
+                        <a href="{{url('/customer/destroy/')}}/{{$customer->customer_id}}">
+                            <button class="btn btn-danger" title="Delete Customer">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </a>
                     </td>
                 </tr>
 
