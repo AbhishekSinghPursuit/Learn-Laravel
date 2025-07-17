@@ -53,6 +53,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\RegistrationController;
 
 // route for calling index function of DemoController class on / url
 Route::get('/', [DemoController::class, 'index']); // one way for calling specific function
@@ -63,3 +64,7 @@ Route::get('/courses', SingleActionController::class);
 
 // Resource controller provde some predefine function like index, edit, show, store, destroy
 Route::resource('/photo', PhotoController::class);
+
+// Registration controller
+Route::get('/register', [RegistrationController::class, 'index']);
+Route::post('/register', [RegistrationController::class, 'register']);
