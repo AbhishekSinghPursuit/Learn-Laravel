@@ -30,14 +30,31 @@ class CustomerController extends Controller
         $customer->state = $request['state'];
         $customer->country = $request['country'];
         $customer->dob = $request['dob'];
+        $customer->age = $request['age'];
+        $customer->status = $request['status'];
         $customer->password = md5($request['password']);
 
         $customer->save();
+
+        return redirect('/customer/view');
+    }
+
+    public function view()
+    {
+        // fetch customer data from database
+        $customers = Customer::all();
+
+        // echo "<pre>";
+        // print_r($cusotmers->toArray()); // toArray() when data exists
+
+        $data = compact('customers'); // make array
+
+        return view('customer_view')->with($data);
     }
 
     public function show($id)
     {
-        //
+        
     }
 
     /**
