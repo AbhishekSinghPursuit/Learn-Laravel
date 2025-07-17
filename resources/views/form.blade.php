@@ -13,14 +13,20 @@
     <div class="container mt-5">
         <form action="{{url('/')}}/register" method="post">
             @csrf
-            <pre>
+            <!-- <pre>
                 @php
                 print_r($errors->all());
                 @endphp
-            </pre>
+            </pre> -->
+            @php 
+                // send any variable to the component 
+                $demo = 1;
+            @endphp
             <div class="container">
                 <h1 class="text-center">Registration</h1>
-                <div class="form-group">
+                
+                <!-- Form without component -->
+                <!-- <div class="form-group">
                     <label for="name">Name</label>
                     <input value="{{old('name')}}" type="text" name="name" class="form-control" id="name" aria-describedby="textHelp" placeholder="Enter name">
                     <span class="text-danger">
@@ -56,11 +62,22 @@
                             {{$message}}
                         @enderror
                     </span>
-                </div>
+                </div> -->
                 <!-- <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div> -->
+
+
+                <!-- Form using Component  -->
+
+                
+                 <x-input type="text" name="name" label="Name" placeholder="Enter your name" :demo="$demo"/>
+                 <x-input type="email" name="email" label="Email" placeholder="Enter your email"/>
+                 <x-input type="password" name="password" label="Password" placeholder="Enter your password"/>
+                 <x-input type="password" name="password_confirmation" label="Confirm Password" placeholder="Re-enter your password"/>
+
+
                 <button type="submit" class="btn btn-warning">Register</button>
             </div>
         </form>
