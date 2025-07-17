@@ -54,6 +54,7 @@ use App\Http\Controllers\DemoController;
 use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\CustomerController;
 use App\Models\Customer;
 
 // route for calling index function of DemoController class on / url
@@ -78,4 +79,5 @@ Route::post('/register', [RegistrationController::class, 'register']);
 // });
 
 // Create customer form and add customer data using form
-
+Route::get('/customer', [CustomerController::class, 'index']);
+Route::post('/customer', [CustomerController::class, 'store']);
