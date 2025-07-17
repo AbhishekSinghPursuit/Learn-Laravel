@@ -8,10 +8,37 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{url('/')}}">Pursuit Customer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/customer')}}">Add</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/customer/view')}}">Customers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/register')}}">Register</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
       <div class="container mt-4">
         <h1 class="text-center">Customer Table</h1>
+        <a title="Add Customer" href="{{route('customer.create')}}">
+            <button type="button" class="btn btn-success d-inline-block m-2 float-right">+Add</button>
+        </a>
         <table class="table">
             <thead>
                 <tr>
@@ -24,6 +51,7 @@
                     <th>Address</th>
                     <th>Age</th>
                     <th>Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,10 +76,18 @@
                     <td>{{$customer->age}}</td>
                     <td>
                         @if($customer->status=="1")
-                            Active {{$customer->status}}
+                            <span class="badge badge-success">Active</span>
                         @else 
-                            Inactive
+                            <span class="badge badge-danger">Inactive</span>
                         @endif
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" title="Update Customer">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button class="btn btn-danger" title="Delete Customer">
+                            <i class="bi bi-trash"></i>
+                        </button>
                     </td>
                 </tr>
 

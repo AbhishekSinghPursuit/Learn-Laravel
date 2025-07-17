@@ -79,6 +79,6 @@ Route::post('/register', [RegistrationController::class, 'register']);
 // });
 
 // Create customer form and add customer data using form
-Route::get('/customer', [CustomerController::class, 'index']);
+Route::get('/customer', [CustomerController::class, 'index'])->name('customer.create'); // named routing
 Route::post('/customer', [CustomerController::class, 'store']);
 Route::get('/customer/view', [CustomerController::class, 'view']);
